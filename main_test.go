@@ -45,6 +45,7 @@ func TestProxyPass(t *testing.T) {
 			t.Errorf("Unexpected error %s", err)
 		}
 		content, err := ioutil.ReadAll(res.Body)
+		res.Body.Close()
 		if err != nil {
 			t.Errorf("Unexpected error %s", err)
 		}
@@ -59,6 +60,7 @@ func TestProxyPass(t *testing.T) {
 			t.Errorf("Unexpected error %s", err)
 		}
 		content, err := ioutil.ReadAll(res.Body)
+		res.Body.Close()
 		if err != nil {
 			t.Errorf("Unexpected error %s", err)
 		}

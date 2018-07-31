@@ -1,7 +1,7 @@
 # Reverser
 
 1. docker build -t reverser .
-2. docker run --rm -p 8000:8000 rev
+2. docker run --rm -p 8000:8000 reverser
 3. Visit localhost:8000 :)
 
 The application provides the following functionality

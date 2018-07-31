@@ -1,0 +1,29 @@
+{{ template "_header.html" . }}
+<h2>ProxyList</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Identifier</th>
+            <th>Target Url</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {{ range .ProxyList }}
+    <tr> 
+        <td>
+            {{ .Path }}
+        </td>
+        <td>
+            {{ .URL }}
+         </td>
+         <td class="text-right">
+            <a href="/proxy/{{ .Path }}" class="btn btn-sm btn-primary">Visit</a>
+            <a href="/unregister?path={{.Path}}" class="btn btn-sm btn-danger">Unregister</a>
+        </td>
+    </tr>
+    {{ end }}
+    </tbody>
+</table>
+<a href="/register" class="btn btn-primary btn-sm">Register</a>
+{{ template "_footer.html" }}

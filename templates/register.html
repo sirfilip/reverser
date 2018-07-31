@@ -1,0 +1,25 @@
+{{ template "_header.html" . }}
+
+<h2>Setup new Proxy</h2>
+
+<form method="POST" action="">
+    <div class="form-group">
+        <label for="path">Path Identifier</label>
+        <input id="path" name="path" value="{{ .Form.Values.Path }}" class="form-control"/>
+        {{ if .Form.Errors.Path }}
+        <span class="text-danger">{{ .Form.Errors.Path }}</span>
+        {{ end }}
+    </div>
+    
+    <div class="form-group">
+        <label for="target">Target</label>
+        <input id="target" name="target" value="{{ .Form.Values.Target }}" class="form-control" />
+        {{ if .Form.Errors.Target }}
+        <span class="text-danger">{{ .Form.Errors.Target }}</span>
+        {{ end }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{{ template "_footer.html" }}
